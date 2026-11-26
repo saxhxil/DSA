@@ -1,12 +1,12 @@
 class Solution {
-    public static int BS(int nums[],int st ,int end , int tar){
-        if(st > end ) return -1;
-        int mid = (st+end)/2;
+    public static int BS(int nums[],int low ,int high , int tar){
+        if(low > high ) return -1;
+        int mid = (low+high)/2;
         if(tar > nums[mid]){
-        return  BS(nums,mid+1,end,tar);
+        return  BS(nums,mid+1,high,tar);
          }
         else if (tar < nums[mid]){
-        return BS(nums,st,mid-1,tar);
+        return BS(nums,low,mid-1,tar);
         }
         else {
         return mid;
